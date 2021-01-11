@@ -1,3 +1,5 @@
+# Programme RISC-V qui calcule n + ... + 1 comme dans le diaporama d'intro.
+# Peut être exécuté sur le simulateur https://www.kvakil.me/venus/        
 foo:
 	mv	a5, a0
 	beqz	a0, fin
