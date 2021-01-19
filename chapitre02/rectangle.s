@@ -71,6 +71,7 @@ main400:                                //
     mov   x1, x26                       // arg1 = perimetre
     bl    printf                        // printf(arg0, arg1)
                                         //
+    mov   x0, 0                         //
     bl    exit                          // quitter le programme
 
 .section ".bss"
