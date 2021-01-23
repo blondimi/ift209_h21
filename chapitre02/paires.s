@@ -32,6 +32,7 @@ loopj:                                      //
         cmp   x21, x19                      //
         b.lo  loopi                         // if (i < m) goto loopi
                                             //
+        mov   x0, 0                         //
         bl    exit                          // quitter le programme
 
 .section ".rodata"
