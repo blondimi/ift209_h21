@@ -6,7 +6,7 @@ main:
         ldr     x19, [x19]
         ldr     w19, [x19]
 
-        // Afficher w19 et quitter
+        // Afficher x19 et quitter
         adr     x0, fmtSortie
         mov     x1, x19
         bl      printf
