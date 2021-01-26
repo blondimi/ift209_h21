@@ -8,7 +8,7 @@ main:
 
         // Afficher w19 et quitter
         adr     x0, fmtSortie
-        mov     w1, w19
+        mov     x1, x19
         bl      printf
         
         mov     x0, 0
