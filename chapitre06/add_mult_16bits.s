@@ -21,7 +21,7 @@ main:                               // main()
     ldrsh   x20, [x20]              //   short b = temp
                                     //
     // Addition                     //
-    add     w21, w19, w20           //   short c = a + b
+    add     w21, w19, w20           //   int c = a + b
                                     //
     adr     x0, fmtSortie           //
     mov     w1, w21                 //
