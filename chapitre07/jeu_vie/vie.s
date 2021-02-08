@@ -46,7 +46,7 @@ compter_voisins:                //     // Compter # voisins vivants de (i, j)
     mul     x24, x21, x20       //
     sub     x24, x24, x20       //
     add     x24, x24, x22       //
-    mul     x24, x28, x24       //     index = 8*(i * (n - 1) + j)
+    mul     x24, x28, x24       //     index = 8*((i - 1) * n + j)
     adr     x25, grille         //
     add     x25, x25, x24       //     adr = &grille + index
                                 //
