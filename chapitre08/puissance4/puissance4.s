@@ -9,8 +9,8 @@ NUM_ELEM     = NUM_LIGNES * NUM_COLONNES
 /*******************************************************************************
   Implémentation du jeu Puissance 4
 
-  Usage: x19 - personne
-         x20 - nb_tour
+  Usage: x19 -- personne
+         x20 -- nb_tour
 *******************************************************************************/
 main:                                   // int main ()
     // Initialiser/afficher grille vide // {
@@ -56,8 +56,8 @@ main_ret:                               //
                                         //
 /*******************************************************************************
  Effet: remplit la grille avec des 0
- Usage: x19 - i
-        x20 - adr
+ Usage: x19 -- i
+        x20 -- adr
 *******************************************************************************/
 initialiser:                            // void initialiser()
     SAVE                                // {
@@ -74,8 +74,8 @@ initialiser_fin:                        //
                                         //
 /*******************************************************************************
   Effet:  efface le terminal et affiche la grille
-  Usage: x19 - i    x21 - adr
-         x20 - j    w22 - case
+  Usage: x19 -- i    x21 -- adr
+         x20 -- j    w22 -- case
 *******************************************************************************/
 afficher:                               // void afficher()
     SAVE                                // {
@@ -130,8 +130,8 @@ afficher_fin:                           //
   Entrée: personne ∈ {1, 2}
   Effet:  lit le numéro d'une colonne et ajoute un jeton dans cette colonne
           assigné à «personne»
-  Usage: x19 - personne    x21 - &grille    w23 - élément à &grille + index
-         x20 - colonne     x22 - index
+  Usage: x19 -- personne    x21 -- &grille    w23 -- élément à &grille + index
+         x20 -- colonne     x22 -- index
 *******************************************************************************/
 ajouter_jeton:                          // void ajouter_jeton(personne)
     SAVE                                // {
@@ -172,8 +172,8 @@ ajouter_jeton_fin:                      //
 /*******************************************************************************
   Entrée: —
   Sortie: une personne a remporté la partie?
-  Usage: x19 - i    x21 -   NUM_LIGNES - 4
-         x20 - j    x22 - NUM_COLONNES - 4
+  Usage: x19 -- i    x21 --   NUM_LIGNES - 4
+         x20 -- j    x22 -- NUM_COLONNES - 4
 *******************************************************************************/
 victoire:                               // bool victoire()
     SAVE                                // {
@@ -258,8 +258,8 @@ victoire_ret:                           //
           dir = (x, y)
   Sortie: les 4 cases consécutives débutant à pos dans la direction dir,
           sont-elles assignées à un même joueur?
-  Usage: x19 - &grille    x21 - saut             x23 - i
-         x20 - index      w22 - premiere_case    w24 - case
+  Usage: x19 -- &grille    x21 -- saut             x23 -- i
+         x20 -- index      w22 -- premiere_case    w24 -- case
 *******************************************************************************/
 verifier_segment:                       // bool verifier_segment(i, j, x, y)
     SAVE                                // {
