@@ -30,8 +30,8 @@ main:                           // int main()
   Entrée: - adresse d'un tableau d'entiers de 64 bits
           - nombre d'éléments du tableau
   Effet:  renverse le contenu du tableau en mémoire
-  Usage: x19 - gauche    x21 - x
-         x20 - droite    x22 - y
+  Usage: x19 -- gauche    x21 -- x
+         x20 -- droite    x22 -- y
 *******************************************************************************/
 renverser:                      // void renverser(long tab[], unsigned long taille)
     SAVE                        // {
@@ -57,8 +57,8 @@ renverser_fin:                  //
   Entrée: - adresse d'un tableau d'entiers de 64 bits
           - nombre d'éléments du tableau
   Effet:  afficher le contenu du tableau
-  Usage: x19 - elem
-         x20 - taille
+  Usage: x19 -- elem
+         x20 -- taille
 *******************************************************************************/
 afficher:                       // void afficher(long tab[], unsigned long taille)
     SAVE                        // {
