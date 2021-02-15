@@ -257,7 +257,7 @@ victoire_ret:                           //
   Entrée: pos = (i, j)
           dir = (x, y)
   Sortie: les 4 cases consécutives débutant à pos dans la direction dir,
-          sont-elles assignées à un même joueur?
+          sont-elles assignées à une même personne?
   Usage: x19 -- &grille    x21 -- saut             x23 -- i
          x20 -- index      w22 -- premiere_case    w24 -- case
 *******************************************************************************/
