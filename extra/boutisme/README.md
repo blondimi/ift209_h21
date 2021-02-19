@@ -126,7 +126,7 @@ le code du caractère est stocké au bon endroit et non sept octets trop loin.
 
 ## Et sous grand-boutisme?
 
-Si nous utilisions ARMv8 sous la convention grand-boutiste, le programme n'accomplirait ***pas sa tâche correctement***.
+Si nous utilisions ARMv8 sous la convention grand-boutiste, ***le programme n'accomplirait pas sa tâche correctement***.
 En effet, dès la lecture du caractère ```a```, dont le code est ```91 = 0x61```, nous aurions obtenu:
 
 |adresse|contenu|
