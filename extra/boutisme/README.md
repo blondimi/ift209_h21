@@ -76,8 +76,8 @@ dans les deux premiers octets de ```tab``` (et ce malgré l'usage de ```str``` p
 ![Sortie de GDB](img/gdb2.png)
 
 Cela fonctionne car nous utilisons l'architecture ARMv8 configurée sous petit-boutisme. En effet, il
-se produit quelque chose d'à priori imperceptible. Stockons manuellement le caractère ```d``` dans le
-quatrième octet du tableau ```tab```:
+se produit quelque chose d'à priori imperceptible. Stockons manuellement le caractère ```d``` (dont
+le code est ```100 = 0x64```) dans le quatrième octet du tableau ```tab```:
 
 ![Sortie de GDB](img/gdb3.png)
 
@@ -86,8 +86,8 @@ mais cela fait disparaître ```d``` qui était pourtant au quatrième octet:
 
 ![Sortie de GDB](img/gdb4.png)
 
-Voyons pourquoi cela se produit. Remarquons que ```tab``` est situé à l'adresse ```0x411011```. Avant
-d'entrer ```c``` au clavier, nous avions ce contenu:
+Voyons pourquoi. Remarquons que ```tab``` est situé à l'adresse ```0x411011```. Avant d'entrer ```c``` au clavier,
+nous avions ce contenu:
 
 |adresse|contenu|
 |:-:|:-:|
