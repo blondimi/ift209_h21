@@ -124,13 +124,6 @@ avec ```ldr```, on stocke ```0x6300000000000000``` (petit-boutisme), ce qui effa
 Par conséquent, chaque stockage avec ```str``` stocke sept octets nuls en trop, mais comme cela se fait sous petit-boutisme,
 le code du caractère est stocké au bon endroit et non sept octets trop loin.
 
-## Autre source d'erreur
-
-Remarquons que le programme effectue des accès mémoire dangereux à partir de la quatrième lecture: comme il va sept
-octets trop loin, il accède à la mémoire au-delà de ```tab```. Cela ne cause pas d'erreur ici car ```tab``` contient
-volontairement 17 octets. En fait, sur ma machine, même en n'allouant que 10 octets, par (mal)chance il n'y a aucune
-erreur de segmentation qui nous avertit du comportement!
-
 ## Et sous grand-boutisme?
 
 Si nous utilisions ARMv8 sous la convention grand-boutiste, le programme n'accomplirait pas sa tâche correctement.
@@ -149,3 +142,9 @@ En effet, dès la lecture du caractère ```a```, dont le code est ```91 = 0x61``
 |```0x411019```|```0x00```|
 |```0x41101A```|```0x00```|
 
+## Autre source d'erreur
+
+Remarquons que le programme effectue des accès mémoire dangereux à partir de la quatrième lecture: comme il va sept
+octets trop loin, il accède à la mémoire au-delà de ```tab```. Cela ne cause pas d'erreur ici car ```tab``` contient
+volontairement 17 octets. En fait, sur ma machine, même en n'allouant que 10 octets, par (mal)chance il n'y a aucune
+erreur de segmentation qui nous avertit du comportement!
