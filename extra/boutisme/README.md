@@ -1,6 +1,6 @@
 # Boutisme: exemple de bogue sournois
 
-À bien des égards, le boutisme n'est qu'une convention qui n'a pas d'incidence; de la même manière que les voitures qui
+À bien des égards, le boutisme n'est qu'une convention qui n'a pas d'incidence; de la même manière que les voitures
 peuvent circuler sans problème à droite au Québec et à gauche en Irlande. Cependant, certains comportements subtils peuvent surgir à
 l'occasion si on n'en tient pas compte; ce qui devrait être assez clair avec l'analogie des voitures! Ce court billet donne un
 tel exemple inspiré d'une erreur repérée lors de la correction du laboratoire 3.
