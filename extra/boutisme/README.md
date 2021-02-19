@@ -119,7 +119,7 @@ avec ```ldr```, on stocke ```0x6300000000000000``` (petit-boutisme), ce qui effa
 |**```0x411019```**|**```0x00```**|
 |**```0x41101A```**|**```0x00```**|
 
-Ainsi, chaque stockage avec ```str``` stocke sept octets nuls en trop, mais comme cela se fait sous petit-boutisme,
+Par conséquent, chaque stockage avec ```str``` stocke sept octets nuls en trop, mais comme cela se fait sous petit-boutisme,
 le code du caractère est stocké au bon endroit et non sept octets trop loin.
 
 ## Autre source d'erreur
