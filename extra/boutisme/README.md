@@ -26,7 +26,7 @@ stockée sur 8 octets à l'adresse ```a``` en mémoire principale est organisée
 ## Exemple de programme qui dépend du boutisme 
 
 Considérons le programme ARMv8 ci-dessous qui cherche à lire dix caractères (d'un octet) au clavier et à les stocker dans un tableau 1D ```tab```.
-Le code est correct à l'exception de l'instruction ```str   x21, [x19, x20]``` qui est problématique. En effet, elle stocke le caractère ```c```
+Le code est correct à l'exception de l'instruction ```str   x21, [x19, x20]``` qui est problématique. En effet, elle stocke le caractère ```'c'```
 lu du flux d'entrée vers ```tab[i]``` mais sur *8 octets* plutôt qu'un seul (on devrait utiliser ```strb```). Pourtant, ce programme se termine
 sans erreur avec les dix caractères bien stockés dans ```tab```.
 
@@ -72,23 +72,23 @@ En lançant le programme avec le débogueur ```gdb```, on voit que ```tab``` con
 
 ![Sortie de GDB](img/gdb1.png)
 
-En entrant le caractère ```a``` puis le caractère ```b``` au clavier, on stocke bien leur code respectif
+En entrant le caractère ```'a'``` puis le caractère ```'b'``` au clavier, on stocke bien leur code respectif
 dans les deux premiers octets de ```tab``` (et ce malgré l'usage de ```str``` plutôt que ```strb```):
 
 ![Sortie de GDB](img/gdb2.png)
 
 Cela fonctionne car nous utilisons l'architecture ARMv8 configurée sous petit-boutisme. En effet, il
-se produit quelque chose d'à priori imperceptible. Stockons manuellement le caractère ```d``` (dont
+se produit quelque chose d'à priori imperceptible. Stockons manuellement le caractère ```'d'``` (dont
 le code est ```100 = 0x64```) dans le quatrième octet du tableau ```tab```:
 
 ![Sortie de GDB](img/gdb3.png)
 
-En lisant ensuite le caractère ```c``` au clavier, on stocke bien son code dans le troisième octet de ```tab```,
-mais cela fait disparaître ```d``` qui était pourtant au quatrième octet:
+En lisant ensuite le caractère ```'c'``` au clavier, on stocke bien son code dans le troisième octet de ```tab```,
+mais cela fait disparaître ```'d'``` qui était pourtant au quatrième octet:
 
 ![Sortie de GDB](img/gdb4.png)
 
-Voyons pourquoi. Remarquons que ```tab``` est situé à l'adresse ```0x411011```. Avant d'entrer ```c``` au clavier,
+Voyons pourquoi. Remarquons que ```tab``` est situé à l'adresse ```0x411011```. Avant d'entrer ```'c'``` au clavier,
 nous avions ce contenu:
 
 |adresse|contenu|
@@ -105,8 +105,8 @@ nous avions ce contenu:
 |```0x41101A```|```0x00```|
 
 
-Le code numérique de ```c``` est ```99 = 0x63```. Ainsi, en le stockant à l'adresse ```0x411013``` sur 8 octets
-avec ```ldr```, on stocke ```0x6300000000000000``` (petit-boutisme), ce qui efface le caractère ```d```:
+Le code numérique de ```'c'``` est ```99 = 0x63```. Ainsi, en le stockant à l'adresse ```0x411013``` sur 8 octets
+avec ```ldr```, on stocke ```0x6300000000000000``` (petit-boutisme), ce qui efface le caractère ```'d'```:
 
 |adresse|contenu|
 |:-:|:-:|
@@ -127,7 +127,7 @@ le code du caractère est stocké au bon endroit et non sept octets trop loin.
 ## Et sous grand-boutisme?
 
 Si nous utilisions ARMv8 sous la convention grand-boutiste, ***le programme n'accomplirait pas sa tâche correctement***.
-En effet, dès la lecture du caractère ```a```, dont le code est ```91 = 0x61```, nous aurions obtenu:
+En effet, dès la lecture du caractère ```'a'```, dont le code est ```91 = 0x61```, nous aurions obtenu:
 
 |adresse|contenu|
 |:-:|:-:|
