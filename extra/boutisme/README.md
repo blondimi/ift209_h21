@@ -106,7 +106,7 @@ nous avions ce contenu:
 
 
 Le code numérique de ```'c'``` est ```99 = 0x63```. Ainsi, en le stockant à l'adresse ```0x411013``` sur 8 octets
-avec ```ldr```, on stocke ```0x6300000000000000``` (petit-boutisme), ce qui efface le caractère ```'d'```:
+avec ```str```, on stocke ```0x6300000000000000``` (petit-boutisme), ce qui efface le caractère ```'d'```:
 
 |adresse|contenu|
 |:-:|:-:|
