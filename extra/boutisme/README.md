@@ -8,7 +8,7 @@ tel exemple inspiré d'une erreur repérée lors de la correction du laboratoire
 ## Ordre des octets
 
 Rappelons que le boutisme («endianness») indique dans quel ordre on stocke les octets d'une unité de mémoire de plusieurs octets.
-Par exemple, sous la convention petit-boutiste («little-endian») on stocke d'abord les octets de poids faible, alors que sous
+Sous la convention petit-boutiste («little-endian») on stocke d'abord les octets de poids faible, alors que sous
 la convention grand-boutiste («big-endian») on stocke d'abord les octets de poids fort. Par exemple, la valeur ```0x61```
 stockée sur 8 octets à l'adresse ```a``` en mémoire principale est organisée de cette façon sous ces deux conventions:
 
