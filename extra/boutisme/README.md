@@ -25,7 +25,8 @@ stockée sur 8 octets à l'adresse ```a``` en mémoire principale est organisée
 
 ## Exemple de programme qui dépend du boutisme 
 
-Considérons le programme ARMv8 ci-dessous qui cherche à lire dix caractères (d'un octet) au clavier et à les stocker dans un tableau 1D ```tab```.
+Considérons le programme ARMv8 ci-dessous qui cherche à lire dix caractères (d'un octet) au clavier et à les stocker dans un tableau ```tab```
+(comme pour la lecture de la carte au labo 3).
 Le code est correct à l'exception de l'instruction ```str   x21, [x19, x20]``` qui est problématique. En effet, elle stocke le caractère ```c```
 lu du flux d'entrée vers ```tab[i]``` mais sur *8 octets* plutôt qu'un seul (on devrait utiliser ```strb```). Pourtant, ce programme se termine
 sans erreur avec les dix caractères bien stockés dans ```tab```.
