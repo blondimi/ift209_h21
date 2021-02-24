@@ -79,8 +79,8 @@ dans les deux premiers octets de ```tab``` (et ce malgré l'usage de ```str``` p
 ![Sortie de GDB](img/gdb2.png)
 
 Cela fonctionne car nous utilisons l'architecture ARMv8 configurée sous petit-boutisme. En effet, il
-se produit quelque chose d'à priori imperceptible. Stockons manuellement le caractère ```'d'``` (dont
-le code est ```100 = 0x64```) dans le quatrième octet du tableau ```tab```:
+se produit quelque chose d'à priori imperceptible. Utilisons le débogueur afin de stocker manuellement le caractère
+```'d'``` (dont le code est ```100 = 0x64```) dans le quatrième octet du tableau ```tab```:
 
 ![Sortie de GDB](img/gdb3.png)
 
