@@ -143,9 +143,11 @@ En effet, dès la lecture du caractère ```'a'```, dont le code est ```91 = 0x61
 |```0x411019```|```0x00```|
 |```0x41101A```|```0x00```|
 
-## Autre source d'erreur
+## Bogue non détecté
 
 Remarquons que le programme effectue des accès mémoire dangereux à partir de la quatrième lecture: comme il manipule sept
-octets en trop, il accède à la mémoire au-delà de ```tab```. Cela ne cause pas d'erreur ici car ```tab``` contient
-volontairement 17 octets. En fait, sur ma machine, même en n'allouant que 10 octets, par (mal)chance il n'y a aucune
-erreur de segmentation qui nous avertit du comportement!
+octets en trop, il accède à la mémoire au-delà de ```tab```. Comme mentionné, cela ne se manifeste pas à l'exécution car,
+ sous convention grand-boutiste, les octets sont stockés dans l'ordre attendu. De plus, cela ne cause pas d'erreur ici car
+```tab``` contient volontairement 17 octets. En fait, sur ma machine, même en n'allouant que 10 octets, par (mal)chance il
+n'y a aucune erreur de segmentation qui nous avertit du comportement. Pire, si une autre donnée du programme était stockée
+sous ```tab```, alors ses sept premiers octets seraient effacés silencieusement!
