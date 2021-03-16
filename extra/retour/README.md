@@ -229,8 +229,8 @@ by the type of that result:
 
 Toutefois, le premier item est sujet aux contraintes plutôt techniques
 décrites à la section 5.4 de la convention d'appel. En particulier, on
-y apprend qu'une ```struct``` d'entiers de plus de 128 bits doit être
-retournée via ```x8```:
+y apprend qu'***une ```struct``` d'entiers de plus de 128 bits*** doit être
+retournée via ```x8``` (ce qui est notre cas):
 
 ```
 B.3  If the argument type is a Composite Type that is larger than 16
