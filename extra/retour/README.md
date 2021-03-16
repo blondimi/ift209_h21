@@ -161,7 +161,7 @@ Ce code est compilé de cette façon:
 main:                                 // int main()
 	stp	x29, x30, [sp, -48]!  // {
 	add	x29, sp, 0            //   sauvegarder [x29, x30] au sommet de la pile
-                                      //    et laisser de l'espace pour cinq double mots
+                                      //    et laisser de l'espace pour quatre double mots
                                       //
 	add	x8, x29, 24           //   u64* w = pile + 3
 	mov	x0, 42                //
