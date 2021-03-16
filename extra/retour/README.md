@@ -66,7 +66,6 @@ plus:                                 // [u64, u64] plus(u64 u.x, u64 u.y, u64 v
 Pour simplifier la notation, le «pseudocode à la C» en commentaires
 utilise l'abréviation ```u64``` pour spécifier ```unsigned long```,
 et les crochets pour spécifier une paire de valeurs.
-
 Ainsi, le compilateur représente les deux vecteurs ```u``` et ```v```
 par quatre valeurs passées dans les registres ```x0``` à ```x3```. La
 somme ```w``` des deux vecteurs est quant à elle retournée via
