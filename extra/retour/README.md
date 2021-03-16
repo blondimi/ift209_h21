@@ -180,9 +180,9 @@ le sommet de la pile comme l'élément ```0```. Le code ci-dessus
 sauvegarde ```x29``` et ```x30``` dans ```pile[0]``` et ```pile[1]```,
 et réserve ```pile[2]``` à ```pile[5]``` pour des données
 locales. L'appel à ```etendre``` se fait en passant ```42``` et
-```9000``` dans ```x0``` et ```x1```, et l'adresse de ```pile[3]```
-dans ```x8```. L'appelé stocke donc le vecteur 3D résultant dans
-```pile[3]``` à ```pile[5]```.
+```9000``` respectivement dans ```x0``` et ```x1```, et l'adresse
+associée à ```pile[3]``` dans ```x8```. L'appelé stocke donc le
+vecteur 3D résultant dans ```pile[3]``` à ```pile[5]```.
 
 Remarquons que ```pile[2]``` n'est jamais utilisé, mais est nécessaire
 car la pile doit toujours être alignée à un multiple de 16.
