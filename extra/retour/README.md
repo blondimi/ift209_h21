@@ -194,7 +194,7 @@ Voyons pourquoi le compilateur décide de retourner deux entiers via
 ```x2```. Le premier item de l'extrait ci-dessous semble suggérer
 qu'on peut retourner jusqu'à huit valeurs via ```x0``` à ```x7```:
 
-```
+```c
 6.5   Result Return
 
 The manner in which a result is returned from a function is determined
@@ -205,14 +205,14 @@ by the type of that result:
     void func(T arg)
 
   would require that arg be passed as a value in a register (or set of
-  registers) according to the rules in ParameterPassing, then the
+  registers) according to the rules in Parameter Passing, then the
   result is returned in the same registers as would be used for such
   an argument.
 
 • Otherwise, the caller shall reserve a block of memory of sufficient
-  size and alignment to hold the result.  Theaddress of the memory
+  size and alignment to hold the result.  The address of the memory
   block shall be passed as an additional argument to the function in
-  x8. The callee maymodify the result memory block at any point during
+  x8. The callee may modify the result memory block at any point during
   the execution of the subroutine (there is no requirement forthe
   callee to preserve the value stored in x8).
 ```
