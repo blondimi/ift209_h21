@@ -12,10 +12,10 @@ document](https://github.com/ARM-software/abi-aa/releases/download/2020Q4/aapcs6
 ## Exemple de retour via deux registres
 
 Rappelons qu'il n'y a pas de concept d'objets en C (contrairement à
-C++), mais qu'il est possible d'utiliser une ```struct``` afin de
-stocker un bloc contigu de données. Par exemple, cette structure
-représente un vecteur 2D (au sens mathématique) sur 16 octets
-consécutifs:
+C++), mais qu'il est possible d'utiliser une [```struct```](https://en.wikipedia.org/wiki/Struct_(C_programming_language))
+afin de stocker un bloc contigu de données. Par exemple, cette
+structure représente un vecteur 2D (au sens mathématique) sur 16
+octets consécutifs:
 
 ```c
 struct Point2D {
@@ -63,8 +63,8 @@ plus:                                 // [u64, u64] plus(u64 u.x, u64 u.y, u64 v
                                       // }
 ```
 
-Pour simplifier la notation, le «pseudocode à la C» à droite du code
-utilise l'abbréviation ```u64``` pour spécifier ```unsigned long```,
+Pour simplifier la notation, le «pseudocode à la C» en commentaires
+utilise l'abréviation ```u64``` pour spécifier ```unsigned long```,
 et les crochets pour spécifier une paire de valeurs.
 
 Ainsi, le compilateur représente les deux vecteurs ```u``` et ```v```
@@ -188,6 +188,16 @@ fait en passant ```42``` et ```9000``` respectivement dans ```x0``` et
 Remarquons que ```pile[2]``` n'est jamais utilisé, mais est nécessaire
 car la pile doit toujours être alignée à un multiple de 16.
 
+|adresse|nom dans l'explication|contenu|
+|:-:|:-:|:-:|
+|```sp+00```|```pile[0]```|```x29```|
+|```sp+08```|```pile[1]```|```x30```|
+|```sp+16```|```pile[2]```|```—```|
+|```sp+24```|```pile[3]```|```w.x```|
+|```sp+32```|```pile[4]```|```w.y```|
+|```sp+40```|```pile[5]```|```w.z```|
+|```sp+48```|```ancien sommet```|```⋮```|
+
 # Pourquoi deux mais pas trois?
 
 Voyons pourquoi le compilateur décide de retourner deux entiers via
@@ -214,7 +224,7 @@ by the type of that result:
   size and alignment to hold the result.  The address of the memory
   block shall be passed as an additional argument to the function in
   x8. The callee may modify the result memory block at any point during
-  the execution of the subroutine (there is no requirement forthe
+  the execution of the subroutine (there is no requirement for the
   callee to preserve the value stored in x8).
 ```
 
