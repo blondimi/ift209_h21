@@ -162,7 +162,7 @@ main:                                 // int main()
 	add	x29, sp, 0            //   sauvegarder [x29, x30] au sommet de la pile
                                       //    et laisser de l'espace pour quatre double mots
                                       //
-	add	x8, x29, 24           //   u64* w = pile + 3
+	add	x8, x29, 24           //   struct Point3D* w = pile + 24 octets
 	mov	x0, 42                //
 	mov	x1, 9000              //   
 	bl	etendre               //   etendre(42, 9000, w)
