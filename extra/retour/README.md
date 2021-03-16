@@ -40,11 +40,11 @@ struct Point2D plus(struct Point2D u, struct Point2D v)
   return w;
 }
 
-struct Point2D doubler(struct Point2D u, struct Point2D v)
+struct Point2D doubler(struct Point2D v)
 {
   struct Point2D w;
 
-  w = plus(u, v);
+  w = plus(v, v);
 
   return w;
 }
