@@ -59,7 +59,7 @@ plus:                                 // [u64, u64] plus(u64 u.x, u64 u.y, u64 v
                                       // {
 	add	x0, x0, x2            //
 	add	x1, x1, x3            //
-	ret                           //   return [u.x + v.x, v.y + v.y]
+	ret                           //   return [u.x + v.x, u.y + v.y]
                                       // }
 ```
 
