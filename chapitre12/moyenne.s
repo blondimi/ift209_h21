@@ -24,11 +24,11 @@ main:                               // main()
 *******************************************************************************/
 moyenne:                            // moyenne(tab, n)
     // Préserver registres appelant // {
-    stp   x29, x30, [sp, -64]!      //
-    mov   x29, sp                   //
-    stp   x19, xzr, [sp, 16]        //
-    stp   d8, d9,   [sp, 32]        //  /* on empile d9 deux fois simplement
-    stp   d9, d10,  [sp, 48]        //     car on ne peut pas utiliser xzr
+    stp     x29, x30, [sp, -64]!    //
+    mov     x29, sp                 //
+    stp     x19, xzr, [sp, 16]      //
+    stp     d8, d9,   [sp, 32]      //  /* on empile d9 deux fois simplement
+    stp     d9, d10,  [sp, 48]      //     car on ne peut pas utiliser xzr
                                     //     pour remplir le dernier double mot */
     // Calculer moyenne             //
     mov     x19, 0                  //   i   = 0
@@ -46,10 +46,10 @@ moyenne_ret:                        //
     fdiv    d0, d8, d10             //   moy = acc / n
                                     //
     // Restaurer registres appelant //
-    ldp   x19, xzr, [sp, 16]        //
-    ldp   d8, d9,   [sp, 32]        //
-    ldp   d9, d10,  [sp, 48]        //
-    ldp   x29, x30, [sp], 64        //
+    ldp     x19, xzr, [sp, 16]      //
+    ldp     d8, d9,   [sp, 32]      //
+    ldp     d9, d10,  [sp, 48]      //
+    ldp     x29, x30, [sp], 64      //
                                     //
     ret                             //   return moy
                                     // }
