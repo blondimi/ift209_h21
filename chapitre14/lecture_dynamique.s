@@ -85,9 +85,9 @@ _lire_boucle:                           //
     svc        0                        //     read(stdin, tampon[j], 1)
                                         //
     // Fin de la lecture?               //
-    ldrb    w21, [x19, x22]             //
-    cmp     w21, 10                     //     /* 10 = saut de ligne '\n' */
-    b.eq    _lire_copier                //
+    ldrb    w21, [x19, x22]             //     /* 10 = saut de ligne '\n' */
+    cmp     w21, 10                     //     if (tampon[j] == 10)
+    b.eq    _lire_copier                //       break
                                         //
     add     x22, x22, 1                 //     j++
                                         //
