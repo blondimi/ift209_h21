@@ -40,7 +40,7 @@ lire:                       // lire(tampon, taille)
     mov     x10, x1         //
                             //
     mov     x8, 63          //   /* read   = 63
-    mov     x0, 0           //      stdout = 0  */
+    mov     x0, 0           //      stdin  = 0  */
     mov     x1, x9          //
     mov     x2, x10         //
     svc     0               //   read(stdin, tampon, taille)
