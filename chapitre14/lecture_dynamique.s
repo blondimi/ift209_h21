@@ -78,11 +78,11 @@ lire:                                   // lire()
     mov     x22, 0                      //   j = 0
 _lire_boucle:                           //
     // Lire un octet                    //   do {
-    mov        x8, 63                   //     /* read  = 63
-    mov        x0, 0                    //        stdin = 0  */
-    add        x1, x19, x22             //
-    mov        x2, 1                    //
-    svc        0                        //     read(stdin, tampon[j], 1)
+    mov     x8, 63                      //     /* read  = 63
+    mov     x0, 0                       //        stdin = 0  */
+    add     x1, x19, x22                //
+    mov     x2, 1                       //
+    svc     0                           //     read(stdin, tampon[j], 1)
                                         //
     // Fin de la lecture?               //
     ldrb    w21, [x19, x22]             //     /* 10 = saut de ligne '\n' */
