@@ -102,17 +102,20 @@ int main()
 
       // Explication des valeurs:
       //     event.number event.value  offset  pressed << (...) (0x0C >> offset)
-      // Left   0x06      0xFFFF8001    0x00           << 0x00       0xC0
-      // Right  0x06      0x00007FFF    0x00           << 0x01       0xC0
-      // Up     0x07      0xFFFF8001    0x02           << 0x02       0x03
-      // Down   0x07      0x00007FFF    0x02           << 0x03       0x03
+      // Left   0x06        0x8001      0x00           << 0x00       0xC0
+      // Right  0x06        0x7FFF      0x00           << 0x01       0xC0
+      // Up     0x07        0x8001      0x02           << 0x02       0x03
+      // Down   0x07        0x7FFF      0x02           << 0x03       0x03
+      //
+      // Remarque: 0x7FFF = +32767 et 0x8001 = -32767 sont les max. et min.
+      //                                                             sur un axe
     }
 
     print_controller(buttons, joypad);
 
     // Pour débogage
     printf("type  number    value\n");
-    printf("0x%02X   0x%02X   0x%08X\n",
+    printf("0x%02X   0x%02X   0x%04X\n",
            event.type, event.number, event.value);
   }
 
