@@ -101,7 +101,7 @@ int main()
       joypad |= status;
 
       // Explication des valeurs:
-      //    event.number  event.value offset  pressed << (...) (0x0C >> offset)
+      //    event.number  event.value  offset pressed << (...) (0x0C >> offset)
       // Left   0x06        0x8001      0x00          << 0x00       0xC0
       // Right  0x06        0x7FFF      0x00          << 0x01       0xC0
       // Up     0x07        0x8001      0x02          << 0x02       0x03
