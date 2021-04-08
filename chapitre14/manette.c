@@ -1,6 +1,9 @@
 #include <stdio.h>     // fclose, fopen, printf, read_event, FILE
 #include <asm/types.h> // __s16, __u8, __u32
 
+// Testé en classe avec une manette de jeu F310 Logitech
+// (https://www.logitechg.com/fr-ca/products/gamepads/f310-gamepad.940-000110.html)
+
 // Voir, par ex.
 // - https://www.kernel.org/doc/html/latest/input/joydev/joystick-api.html
 // - https://www.kernel.org/doc/Documentation/input/event-codes.txt
