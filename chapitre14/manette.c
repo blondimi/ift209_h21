@@ -93,8 +93,8 @@ int main()
     // Mettre état de la croix directionnelle à jour (si changement)
     if ((event.type & EV_REL) &&
         ((event.number == PAD_UD) || (event.number == PAD_LR))) {
-      __u8 pressed = (event.value & 1);
-      __u8 offset  = (event.number == PAD_UD) ? 0x02 : 0x00;
+      __u8 pressed = (event.value  & 1);
+      __u8 offset  = (event.number & 1) << 1;
       __u8 status  = pressed << (offset | ((event.value & 0x02) >> 1));
 
       joypad &= (0x0C >> offset);
