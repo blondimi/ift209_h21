@@ -74,3 +74,7 @@ forcément dans _2n_ bits, toute l'information pertinente s'y trouve. Il suffit 
 ## Cas où y < 0
 
 ...
+
+<code>
+ Proposition: (2<sup>0</sup>·x + ... + 2<sup>n-1</sup>·x) mod 2<sup>n</sup> = 2<sup>n</sup> - x.
+</code>
