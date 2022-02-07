@@ -2,6 +2,8 @@
 
 # Multiplication d'entiers signés
 
+...
+
 ## Cas où y ≥ 0
 
 Comme dans le cas non signé, nous avons
